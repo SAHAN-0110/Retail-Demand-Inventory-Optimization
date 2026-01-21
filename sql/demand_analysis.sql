@@ -1,4 +1,4 @@
-#Understand raw demand velocity or how fast the product moves
+#Daily Demand per Product
 SELECT
     product_id,
     product_name,
@@ -8,7 +8,7 @@ FROM superstore_sales
 GROUP BY product_id, product_name, CAST(order_date AS DATE)
 ORDER BY sale_date, units_sold DESC;
 
-#Spot seasonality and demand patterns.
+#Monthly Demand Trend
 SELECT
     product_id,
     product_name,
@@ -18,7 +18,7 @@ FROM superstore_sales
 GROUP BY product_id, product_name, DATE_TRUNC('month', order_date)
 ORDER BY month;
 
-#Inventory priority logic.
+#Fast-Moving vs Slow-Moving Products
 SELECT
     product_id,
     product_name,
@@ -27,7 +27,7 @@ SELECT
 FROM superstore_sales
 GROUP BY product_id, product_name;
 
-#Business-level decisions.
+#Category-Level Demand Contribution
 SELECT
     category,
     SUM(quantity) AS total_units_sold,
@@ -40,7 +40,7 @@ FROM superstore_sales
 GROUP BY category
 ORDER BY total_units_sold DESC;
 
-#Smooth demand → inventory planning.
+#7-Day Moving Average
 SELECT
     product_id,
     product_name,
