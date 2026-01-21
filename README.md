@@ -61,6 +61,7 @@ The dataset reflects real-world retail scenarios with realistic demand variation
 - Certain categories contribute to low inventory turnover and increased holding costs
 - Demand patterns reveal seasonality that should influence reorder planning
 - Optimized inventory levels can reduce excess stock without impacting sales
+- Inventory risk was estimated using demand velocity due to the absence of direct inventory tables, reflecting real-world data limitations
 
 ---
 
